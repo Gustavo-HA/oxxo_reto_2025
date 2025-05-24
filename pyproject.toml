@@ -1,0 +1,32 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "oxxo_reto_2025"
+version = "0.0.1"
+description = "Soluci\u00f3n al reto de OXXO en el datathon 2025 por el Tec de Monterrey."
+authors = [
+  { name = "Corpus Christi" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+requires-python = "~=3.10.0"
+
+
+[tool.ruff]
+line-length = 99
+src = ["oxxo_reto_2025"]
+include = ["pyproject.toml", "oxxo_reto_2025/**/*.py"]
+
+[tool.ruff.lint]
+extend-select = ["I"]  # Add import sorting
+
+[tool.ruff.lint.isort]
+known-first-party = ["oxxo_reto_2025"]
+force-sort-within-sections = true
+
