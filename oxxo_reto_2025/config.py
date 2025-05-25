@@ -21,12 +21,9 @@ MODELS_DIR = PROJ_ROOT / "models"
 REPORTS_DIR = PROJ_ROOT / "reports"
 FIGURES_DIR = REPORTS_DIR / "figures"
 
-# If tqdm is installed, configure loguru with tqdm.write
-# https://github.com/Delgan/loguru/issues/135
-try:
-    from tqdm import tqdm
+# RAW DATA FILES
 
-    logger.remove(0)
-    logger.add(lambda msg: tqdm.write(msg, end=""), colorize=True)
-except ModuleNotFoundError:
-    pass
+RAW_TRAIN_DATA = RAW_DATA_DIR / "DIM_TIENDA.csv"
+RAW_TEST_DATA = RAW_DATA_DIR / "DIM_TIENDA_TEST.csv"
+META_VENTA_PATH = RAW_DATA_DIR / "Meta_venta.csv"
+MES_VENTA_PATH = RAW_DATA_DIR / "Venta.csv"
